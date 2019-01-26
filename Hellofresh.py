@@ -10,6 +10,7 @@ if __name__ == "__main__"(argv):
         .builder \
         .appName("Hellofresh_test") \
         .getOrCreate()
+    print('test')
 
     for arg in argv:
         if sys.argv[1]:
