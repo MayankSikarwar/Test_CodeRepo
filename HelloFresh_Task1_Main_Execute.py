@@ -1,12 +1,10 @@
 import argparse
 from pyspark.sql import SparkSession
-import table_create
+import trans_data
 import beef_view
-import append_table
+import create_append_table
 
-
-pipelines = {"table_create": table_create, "beef_view": beef_view, "append_table": append_table}
-
+pipelines = {"trans_data": trans_data, "create_append_table": create_append_table, "beef_view": beef_view}
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -18,4 +16,5 @@ if __name__ == "__main__":
                  .appName("Hello_fresh_test") \
                  .getOrCreate()
     pipelines[args.pipeline].execute(spark)
+
     spark.stop()

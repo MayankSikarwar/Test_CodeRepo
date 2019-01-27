@@ -9,8 +9,9 @@ def error_handle(x:int):
                   """Get system properties"""
                   properties = "getProperties()"
                   """Create default MimeMessage object"""
-                  MimeMessage_message = "failed to create table"
-            elif x == 2:
+                  mimemessage_message = "transformation failed"
+
+            elif x == 2 or 3:
                    """Recipient's email ID needs to be mentioned."""
                    to = "email_To"
                    """Sender's email ID needs to be mentioned"""
@@ -20,8 +21,8 @@ def error_handle(x:int):
                    """Get system properties"""
                    properties = "getProperties()"
                    """Create default MimeMessage object"""
-                   MimeMessage_message = "failed to append table"
-            elif x == 3:
+                   MimeMessage_message = "create or append table"
+            elif x == 4:
                    """Recipient's email ID needs to be mentioned."""
                    to = "email_To"
                    """Sender's email ID needs to be mentioned"""
