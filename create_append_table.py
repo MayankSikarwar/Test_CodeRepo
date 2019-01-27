@@ -33,8 +33,8 @@ def execute(spark):
                               AND 30 THEN 'easy' WHEN cookT BETWEEN 30 AND 45 THEN 'medium' WHEN cookT BETWEEN 45 AND 60 THEN \
                               'hard' ELSE 'undefined' END AS type from recipes_temp")
 
-              append_table.write.partitionBy("DATE") \
-                              .saveAsTable("recipes_ingestion", 'format = "orc"', 'mode = "append"', 'path = "<path to orc>" ')
+              append_table.write.partitionBy("DATE").saveAsTable("recipes_ingestion", 'format = "orc"', 'mode = "append"', 'path = "<path to orc>" ')
+
 
               """refrsh table in impala"""
 
