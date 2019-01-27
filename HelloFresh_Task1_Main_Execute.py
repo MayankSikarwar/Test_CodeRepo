@@ -1,5 +1,5 @@
 import argparse
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession , HiveContext
 import trans_data
 import beef_view
 import create_append_table
@@ -14,7 +14,9 @@ if __name__ == "__main__":
     spark = spark = SparkSession \
                  .builder \
                  .appName("Hello_fresh_test") \
-                 .getOrCreate()
+                 .getOrCreate() \
+                 .enablehivesuppot()
+
     pipelines[args.pipeline].execute(spark)
 
     spark.stop()
